@@ -5,4 +5,8 @@ Rails.application.routes.draw do
     resources :callback, only: %i(index)
     resources :webhook, only: %i(create)
   end
+  scope 'calendar' do
+    get 'auth', to: 'calendar#auth'
+  end
+  get 'oauth2callback', to: 'calendar#callback'
 end

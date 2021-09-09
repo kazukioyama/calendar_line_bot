@@ -15,6 +15,12 @@ class WebhookController < ApplicationController
       case event
       when Line::Bot::Event::Message
         Line::SaveReceivedMessage.new(admin).call(event)
+        Line::SaveSentMessage.new(admin).call_with_text(line_user_id: event['source']['userId'], text: "response")
+        Line::SaveSentMessage.new(admin).call_with_text(line_user_id: event['source']['userId'], text: "https://9920-14-3-72-98.ngrok.io/google/auth")
+        # case event.type
+        # when Line::Bot::Event::MessageType::Text
+
+        # end
       end
     end
 
