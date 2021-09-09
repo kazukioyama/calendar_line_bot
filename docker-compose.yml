@@ -6,7 +6,7 @@ services:
     ports:
       - '3000:3000'
     environment:
-      - 'HOST=2c82-103-5-142-121.ngrok.io' # ngrokで生成された値に変える
+      - 'HOST=9920-14-3-72-98.ngrok.io' # ngrokで生成された値に変える
     volumes:
       - .:/app
       - bundle:/usr/local/bundle
