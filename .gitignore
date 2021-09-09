@@ -28,6 +28,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/client_secret.json
+client_secret.json
 
-/credentials_yaml
+credentials.yaml
