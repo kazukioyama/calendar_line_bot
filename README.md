@@ -13,6 +13,9 @@ ID → @816xtioc
 2. Click this URL and redirect Google Authentication page.
 <img width="592" alt="スクリーンショット 2021-09-10 19 23 37" src="https://user-images.githubusercontent.com/63193573/132839984-933236ae-d47c-4fbd-90ad-7d6290eeebe2.png">
   <img width="1761" alt="スクリーンショット 2021-09-10 19 27 27" src="https://user-images.githubusercontent.com/63193573/132841587-3845695e-9440-4877-9d31-9069672ac6d0.png">
+  <img width="1776" alt="スクリーンショット 2021-09-10 19 42 37" src="https://user-images.githubusercontent.com/63193573/132842077-402d7d10-f240-497e-aaae-a4d27ecfde22.png">
+
+
 
   
 3. If "Google連携完了!" is displayed, this authentication is successful. 
