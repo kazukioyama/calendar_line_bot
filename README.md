@@ -5,8 +5,9 @@ A simpler application to manage your Google Calendar on LINE chat.
 
 ## Installation
 
-Add this bot account as a friend on LINE.
-ID → @816xtioc
+Add this bot account as a friend on LINE.  
+ID → @816xtioc  
+<img width="311" alt="スクリーンショット 2021-09-10 19 10 05" src="https://user-images.githubusercontent.com/63193573/132838140-2d241651-f056-4e16-bc13-7366c988e0a3.png">
 
 
 ## Usage
