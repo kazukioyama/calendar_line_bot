@@ -5,9 +5,18 @@ A simpler application to manage your Google Calendar on LINE chat.
 
 ## Installation
 
-Add this bot account as a friend on LINE.  
+1. Add this bot account as a friend on LINE.  
 ID → @816xtioc    
 <img width="311" alt="スクリーンショット 2021-09-10 19 10 05" src="https://user-images.githubusercontent.com/63193573/132838140-2d241651-f056-4e16-bc13-7366c988e0a3.png">
+
+  
+2. Click this URL and redirect Google Authentication page.
+<img width="592" alt="スクリーンショット 2021-09-10 19 23 37" src="https://user-images.githubusercontent.com/63193573/132839984-933236ae-d47c-4fbd-90ad-7d6290eeebe2.png">
+  <img width="1761" alt="スクリーンショット 2021-09-10 19 27 27" src="https://user-images.githubusercontent.com/63193573/132841587-3845695e-9440-4877-9d31-9069672ac6d0.png">
+
+  
+3. If "Google連携完了!" is displayed, this authentication is successful. 
+<img width="1778" alt="スクリーンショット 2021-09-10 19 38 18" src="https://user-images.githubusercontent.com/63193573/132841448-0355321a-c710-4559-b627-2996ba45c53f.png">
 
 
 ## Usage
