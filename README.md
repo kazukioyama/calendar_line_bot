@@ -31,8 +31,8 @@ ID → @816xtioc
 
 Please enter the message below.
 
-・Hello
-(if init)
+・Hello  
+(if you haven't authenticated with your Google account yet)
 
 ・Get Upcoming Event  
 (if you want to know your upcoming event)
