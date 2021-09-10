@@ -15,7 +15,8 @@ ID → @816xtioc
 
   <img width="375" alt="スクリーンショット 2021-09-10 19 49 41" src="https://user-images.githubusercontent.com/63193573/132842576-3fdb2103-f204-4d7b-bf0c-36e28bc110f6.png">
   
-  <img width="300" alt="スクリーンショット 2021-09-10 19 53 43" src="https://user-images.githubusercontent.com/63193573/132843004-19b33888-4c09-46ad-bcef-90ac096134f0.png">
+  <img width="295" alt="スクリーンショット 2021-09-10 20 00 50" src="https://user-images.githubusercontent.com/63193573/132843769-00d7e0f5-cd43-43fb-af02-3a878161be93.png">
+
 
 
   
