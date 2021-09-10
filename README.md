@@ -1,6 +1,6 @@
 # CalendarLINEBot
 
-A simpler application to manage your Google Calendar on LINE chat.
+A simple application to manage your Google Calendar on LINE chat.
 
 
 ## Installation
