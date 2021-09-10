@@ -1,4 +1,4 @@
-# Jb
+# CalendarLINEBot
 
 A simpler application to manage your Google Calendar on LINE chat.
 
