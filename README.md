@@ -31,6 +31,9 @@ ID → @816xtioc
 
 Please enter the message below.
 
+・Hello
+(if init)
+
 ・Get Upcoming Event  
 (if you want to know your upcoming event)
 
