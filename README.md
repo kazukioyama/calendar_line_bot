@@ -15,13 +15,13 @@ ID → @816xtioc
 Please enter the message below.
 
 ・Get Upcoming Event  
-(→if you want to know your upcoming event)
+(if you want to know your upcoming event)
 
 ・Get 10 Events  
-(→if you want to know your latest 10 events)
+(if you want to know your latest 10 events)
 
 ・Switch Between Google Accounts    
-(→if you want to switch between google accounts)
+(if you want to switch between google accounts)
 
 ## Examples
 
