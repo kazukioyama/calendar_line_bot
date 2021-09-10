@@ -21,7 +21,8 @@ ID → @816xtioc
 
   
 3. If "Google連携完了!" is displayed, this authentication is successful. 
-  <img width="97" alt="スクリーンショット 2021-09-10 19 50 33" src="https://user-images.githubusercontent.com/63193573/132842755-ca6b136f-2d6f-4400-9564-8392aa0d27ef.png">
+  <img width="587" alt="スクリーンショット 2021-09-10 19 52 21" src="https://user-images.githubusercontent.com/63193573/132842918-b4783611-a23c-4afc-ba55-22396e2c5ef3.png">
+  
 
 
 ## Usage
