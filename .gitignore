@@ -31,3 +31,5 @@
 client_secret.json
 
 credentials.yaml
+
+.env

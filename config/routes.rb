@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :webhook, only: %i(create)
   end
   scope 'calendar' do
-    get 'auth', to: 'calendar#auth'
+    get 'auth/:user_id', to: 'calendar#auth'
   end
   get 'oauth2callback', to: 'calendar#callback'
 end
