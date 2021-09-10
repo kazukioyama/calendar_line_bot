@@ -11,26 +11,9 @@ module Calendar
     end
 
     def get_events(max_num)
-      service = Google::Apis::CalendarV3::CalendarService.new
-      service.client_options.application_name = "Google Calendar API Ruby Quickstart"
+      # docs: https://developers.google.com/calendar/api/v3/reference/events/list
 
-      access_token = @user.google_access_token
-      puts access_token
-      puts "dd"
-      refresh_token = @user.google_refresh_token
-      puts refresh_token
-
-      # 受け取ったトークンをAPIのclientにブチ込む
-      client = Signet::OAuth2::Client.new(
-        client_id: CLIENT_ID,
-        client_secret: CLIENT_SECRET,
-        access_token: access_token,
-        refresh_token: refresh_token,
-        token_credential_uri: 'https://accounts.google.com/o/oauth2/token'
-      )
-      # client.refresh!
-      service.authorization = client
-
+      service = set_client
       calendar_id = "primary"
       response = service.list_events(calendar_id,
                                     max_results:   max_num,
@@ -47,6 +30,28 @@ module Calendar
       end
 
       return events_list
+    end
+
+    private
+    def set_client
+      service = Google::Apis::CalendarV3::CalendarService.new
+      service.client_options.application_name = "Google Calendar API Ruby Quickstart"
+
+      access_token = @user.google_access_token
+      refresh_token = @user.google_refresh_token
+
+      # 受け取ったトークンをAPIのclientにブチ込む
+      client = Signet::OAuth2::Client.new(
+        client_id: CLIENT_ID,
+        client_secret: CLIENT_SECRET,
+        access_token: access_token,
+        refresh_token: refresh_token,
+        token_credential_uri: 'https://accounts.google.com/o/oauth2/token'
+      )
+      # client.refresh!
+      service.authorization = client
+
+      return service
     end
   end
 end
