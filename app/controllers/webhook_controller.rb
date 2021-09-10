@@ -14,13 +14,22 @@ class WebhookController < ApplicationController
     events.each do |event|
       case event
       when Line::Bot::Event::Message
+        line_user_id = event['source']['userId']
         Line::SaveReceivedMessage.new(admin).call(event)
-        Line::SaveSentMessage.new(admin).call_with_text(line_user_id: event['source']['userId'], text: "response")
-        Line::SaveSentMessage.new(admin).call_with_text(line_user_id: event['source']['userId'], text: "https://9920-14-3-72-98.ngrok.io/google/auth")
+        Line::SaveSentMessage.new(admin).call_with_text(line_user_id: line_user_id, text: "Processing...")
+        user = User.find_by(line_user_id: line_user_id)
+        if user.google_access_token.nil?
+          Line::SaveSentMessage.new(admin).call_with_text(line_user_id: line_user_id, text: "https://9920-14-3-72-98.ngrok.io/calendar/auth/#{user.id}")
+          Line::SaveSentMessage.new(admin).call_with_text(line_user_id: line_user_id, text: "Please Google authentication from the URL above.")
+          # Line::SaveSentMessage.new(admin).call_with_text(line_user_id: line_user_id, text: "上のURLから、使用したいGoogleアカウントでGoogle認証を行ってください")
+        else
+          events_list = Calendar::GoogleCalendar.new(user).get_events(10)
+          events_list[:summary].each do |value|
+            Line::SaveSentMessage.new(admin).call_with_text(line_user_id: line_user_id, text: value)
+          end
         # case event.type
         # when Line::Bot::Event::MessageType::Text
-
-        # end
+        end
       end
     end
 
