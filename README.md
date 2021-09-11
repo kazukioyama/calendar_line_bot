@@ -10,7 +10,7 @@ ID → @816xtioc
 <img width="311" alt="スクリーンショット 2021-09-10 19 10 05" src="https://user-images.githubusercontent.com/63193573/132838140-2d241651-f056-4e16-bc13-7366c988e0a3.png">
 
   
-2. Enter "Hello" and click this URL and redirect Google Authentication page.
+2. Enter "Hello" and click this URL and redirect to Google Authentication page.
 <img width="592" alt="スクリーンショット 2021-09-10 19 23 37" src="https://user-images.githubusercontent.com/63193573/132839984-933236ae-d47c-4fbd-90ad-7d6290eeebe2.png">
 
   <img width="375" alt="スクリーンショット 2021-09-10 19 49 41" src="https://user-images.githubusercontent.com/63193573/132842576-3fdb2103-f204-4d7b-bf0c-36e28bc110f6.png">
