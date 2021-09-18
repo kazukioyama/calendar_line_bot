@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_09_10_054512) do
   end
 
   create_table "message_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.text "content", size: :medium
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
