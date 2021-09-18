@@ -27,3 +27,7 @@ gem 'pry-rails'
 gem 'listen' # Add `gem 'listen'` to the development group of your Gemfile (LoadError) と怒られたので追加
 
 gem 'dotenv-rails'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.6'
+end
