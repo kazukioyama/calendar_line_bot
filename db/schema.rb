@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2021_09_10_054512) do
     t.integer "line_messaging_id", null: false
     t.string "line_messaging_secret", null: false
     t.string "line_messaging_token", null: false
-    t.integer "line_login_id", null: false
-    t.string "line_login_secret", null: false
+    t.integer "line_login_id"
+    t.string "line_login_secret"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

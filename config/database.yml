@@ -19,7 +19,7 @@ default: &default
 
 development:
   <<: *default
-  database: rails_line_bot2
+  database: rails_line_bot
   host: db
 
 # Warning: The database defined as "test" will be erased and
