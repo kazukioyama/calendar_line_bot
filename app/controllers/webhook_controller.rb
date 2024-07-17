@@ -42,25 +42,28 @@ class WebhookController < ApplicationController
         line_user_id: line_user_id,
         text: "Sorry, User creation failed."
       )
+      return
     end
 
     events.each do |event|
       case event
       when Line::Bot::Event::Message
         begin
-          Line::SaveReceivedMessage.new(admin).call(event) # 受け取ったメッセージをDBに保存
+          Line::SaveReceivedMessage.new(admin, user).call(event) # 受け取ったメッセージをDBに保存
         rescue ActiveRecord::RecordInvalid => e
           puts "User creation failed: #{e.message}"
           Line::SaveSentMessage.new(admin).call_with_text(
             line_user_id: line_user_id,
             text: "Sorry, User creation failed."
           )
+          return
         rescue => e
           puts "An unexpected error occurred: #{e.message}"
           Line::SaveSentMessage.new(admin).call_with_text(
             line_user_id: line_user_id,
             text: "Sorry, Message creation failed due to an unexpected error."
           )
+          return
         end
         begin
           # 受け取ったメッセージ内容によって処理を分岐

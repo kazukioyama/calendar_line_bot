@@ -1,6 +1,6 @@
 module Line
   class SaveReceivedMessage
-    def initialize(admin)
+    def initialize(admin, user)
       @admin = admin
       @user = user
     end
