@@ -67,20 +67,11 @@ class WebhookController < ApplicationController
             Line::SaveSentMessage.new(admin, user).call_with_text(text: "Hi! Thank you for using me.")
             Line::SaveSentMessage.new(admin, user).call_with_text(text: "Please click the following URL to authenticate your Google account.\n\n#{auth_url(user)}")
           when "Get Upcoming Event"
-            if user.google_access_token.nil?
-              Line::SaveSentMessage.new(admin, user).call_with_text(
-                text: "Please click the following URL to authenticate your Google account.\n\n#{auth_url(user)}"
-              )
-            end
             events_list = Calendar::GoogleCalendar.new(user).get_events(1)
             events_list[:summary].each do |value|
               Line::SaveSentMessage.new(admin, user).call_with_text(text: value)
             end
           when "Get 10 Events"
-            if user.google_access_token.nil?
-              Line::SaveSentMessage.new(admin, user).call_with_text(
-                text: "Please click the following URL to authenticate your Google account.\n\n#{auth_url(user)}"
-              )
             end
             events_list = Calendar::GoogleCalendar.new(user).get_events(10)
             events_list[:summary].each do |value|

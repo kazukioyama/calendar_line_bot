@@ -8,6 +8,10 @@ module Calendar
 
     def initialize(user)
       @user = user
+
+      if @user.google_access_token.nil?
+        raise StandardError
+      end
     end
 
     def get_events(max_num)
