@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :google_oauth do
     collection do
-      get 'auth/:user_id', to: 'oauth#auth', as: 'auth'
+      get 'auth/:user_id', to: 'google_oauth#auth', as: 'auth'
       get 'callback'
     end
   end

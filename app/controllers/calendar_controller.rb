@@ -46,7 +46,7 @@ class CalendarController < ApplicationController
     user = User.find(user_id)
     user.update_attributes!(google_access_token: access_token, google_refresh_token: refresh_token)
 
-    render plain: 'Google連携完了！', status: :ok
+    render plain: 'Google連携完了！LINEチャットに戻ってください。', status: :ok
 
     # service = Google::Apis::CalendarV3::CalendarService.new
     # service.client_options.application_name = APPLICATION_NAME
