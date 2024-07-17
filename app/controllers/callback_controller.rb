@@ -9,7 +9,7 @@ class CallbackController < ApplicationController
     raise Line::InvalidState if params[:state] != session[:state]
 
     line_user_id = Line::Api::Oauth.new(admin).line_user_id(params[:code]) # アクセストークン取得→ユーザID取得 (リクエスト2回実行される)
-    User.create!(line_user_id: line_user_id) # line_user_idカラムに値の有無で、userがLINEログインしているかどうかを判別できるため
+    User.create!(line_user_id: line_user_id) # line_user_idカラムの値の有無で、UserがLINEログインしているかどうかを判別できる
 
     render plain: 'LINE連携完了！', status: :ok
   end

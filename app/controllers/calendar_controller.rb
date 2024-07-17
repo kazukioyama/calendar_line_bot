@@ -6,7 +6,7 @@ class CalendarController < ApplicationController
   require "googleauth/stores/file_token_store"
 
   TOKEN_STORE_FILE = 'credentials.yaml'.freeze
-  BASE_URL = "https://9920-14-3-72-98.ngrok.io".freeze
+  BASE_URL = "https://#{ENV['HOST']}".freeze
   APPLICATION_NAME = "Google Calendar API Ruby Quickstart".freeze
   GOOGLE_URL = "https://accounts.google.com".freeze
   CLIENT_ID = ENV['CLIENT_ID']
@@ -31,7 +31,7 @@ class CalendarController < ApplicationController
     req_body = {
       grant_type: 'authorization_code',
       code: code, # 上で取得した認可コード
-      redirect_uri: "https://9920-14-3-72-98.ngrok.io/oauth2callback", # LINEログインのチャネルのコンソールで設定した「コールバックURL」と比較するため
+      redirect_uri: "https://#{ENV['HOST']}/oauth2callback", # LINEログインのチャネルのコンソールで設定した「コールバックURL」と比較するため
       client_id: CLIENT_ID, # client_secret.json参照
       client_secret: CLIENT_SECRET # client_secret.json参照
     }
