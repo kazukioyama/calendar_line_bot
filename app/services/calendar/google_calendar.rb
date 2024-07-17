@@ -3,13 +3,13 @@ module Calendar
     require "google/apis/calendar_v3"
     require "signet/oauth_2/client"
 
-    CLIENT_ID = ENV['CLIENT_ID']
-    CLIENT_SECRET = ENV['CLIENT_SECRET']
+    CLIENT_ID = Rails.application.credentials.google[:oauth_client_id]
+    CLIENT_SECRET = Rails.application.credentials.google[:oauth_client_secret]
 
     def initialize(user)
       @user = user
 
-      if @user.google_access_token.nil?
+      if @user.google_oauth_token.blank?
         raise StandardError
       end
     end
@@ -41,8 +41,8 @@ module Calendar
       service = Google::Apis::CalendarV3::CalendarService.new
       service.client_options.application_name = "Google Calendar API Ruby Quickstart"
 
-      access_token = @user.google_access_token
-      refresh_token = @user.google_refresh_token
+      access_token = @user.google_oauth_token.access_token
+      refresh_token = @user.google_oauth_token.refresh_token
 
       # 受け取ったトークンをAPIのclientにブチ込む
       client = Signet::OAuth2::Client.new(
