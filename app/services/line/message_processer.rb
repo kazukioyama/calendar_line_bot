@@ -38,7 +38,7 @@ module Line
     end
 
     def send_message(text)
-      Line::SaveSentMessage.new(@admin, @user).call_with_text(text: text)
+      ::Line::SaveSentMessage.new(@admin, @user).call_with_text(text: text)
     end
 
     def fetch_events(count)
