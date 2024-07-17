@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     resources :callback, only: %i(index)
     resources :webhook, only: %i(create)
   end
-  scope 'calendar' do
-    get 'auth/:user_id', to: 'calendar#auth'
+  resources :google_oauth do
+    collection do
+      get 'auth/:user_id', to: 'oauth#auth', as: 'auth'
+      get 'callback'
+    end
   end
-  get 'oauth2callback', to: 'calendar#callback'
 end

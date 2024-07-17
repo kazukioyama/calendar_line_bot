@@ -72,7 +72,6 @@ class WebhookController < ApplicationController
               Line::SaveSentMessage.new(admin, user).call_with_text(text: value)
             end
           when "Get 10 Events"
-            end
             events_list = Calendar::GoogleCalendar.new(user).get_events(10)
             events_list[:summary].each do |value|
               Line::SaveSentMessage.new(admin, user).call_with_text( text: value)
@@ -101,6 +100,6 @@ class WebhookController < ApplicationController
   private
   # TODO: _path(user_id: user.id)の形でヘルパーメソッドで渡すようにする
   def auth_url(user)
-    "https://#{ENV['HOST']}/calendar/auth/#{user.id}"
+    auth_google_oauth_index_url(user_id: user.id)
   end
 end
