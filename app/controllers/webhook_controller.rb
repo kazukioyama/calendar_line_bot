@@ -99,6 +99,7 @@ class WebhookController < ApplicationController
           Line::SaveSentMessage.new(admin, user).call_with_text(
             text: "Sorry, an error occurred on the server.\nPlease contact the system administrator or click the following URL to authenticate your Google account again.\n\n#{auth_url(user)}"
           )
+          return
         end
       end
     end
@@ -107,6 +108,7 @@ class WebhookController < ApplicationController
   end
 
   private
+  # TODO: _path(user_id: user.id)の形でヘルパーメソッドで渡すようにする
   def auth_url(user)
     "https://#{ENV['HOST']}/calendar/auth/#{user.id}"
   end
