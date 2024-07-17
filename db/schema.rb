@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_10_054512) do
+ActiveRecord::Schema.define(version: 2024_07_17_130346) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "line_messaging_id", null: false
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2021_09_10_054512) do
     t.string "line_login_secret"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "google_oauth_tokens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "access_token", null: false
+    t.string "refresh_token", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_google_oauth_tokens_on_user_id"
   end
 
   create_table "message_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -43,8 +52,7 @@ ActiveRecord::Schema.define(version: 2021_09_10_054512) do
     t.string "line_user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "google_access_token"
-    t.string "google_refresh_token"
   end
 
+  add_foreign_key "google_oauth_tokens", "users"
 end

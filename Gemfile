@@ -14,10 +14,8 @@ gem 'faraday'
 
 gem 'line-bot-api'
 
-# Google認証用gem
 gem 'googleauth'
 
-# GoogleCalendarAPI叩く用gem
 gem 'google-api-client'
 
 gem 'signet'
