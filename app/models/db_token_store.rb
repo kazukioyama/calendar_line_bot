@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DbTokenStore < Google::Auth::TokenStore
+class DbTokenStore
   def load(id)
     token = GoogleOauthToken.find_by(user_id: id)
     return nil if token.nil?
